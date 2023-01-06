@@ -1,6 +1,6 @@
 import ReactDOMServer from 'react-dom/server'
 import React from 'react'
-import { PageLayout } from './PageLayout'
+import { PageLayout } from '../components/PageLayout'
 import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr'
 
 export { render }
