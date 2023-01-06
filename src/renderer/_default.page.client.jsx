@@ -1,0 +1,15 @@
+import React from 'react'
+import { hydrateRoot } from 'react-dom/client'
+import { PageLayout } from '../components/PageLayout'
+
+export { render }
+
+async function render(pageContext) {
+  const { Page, pageProps } = pageContext
+  hydrateRoot(
+    document.getElementById('page-view'),
+    <PageLayout pageContext={pageContext}>
+      <Page {...pageProps} />
+    </PageLayout>
+  )
+}
