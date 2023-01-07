@@ -8,8 +8,8 @@ function App() {
     <div className="App flex w-full min-h-screen">
       <Nav />
       <Routes>
-        <Route path="/" element={ <Home/> } />
-        <Route path="date-widget" element={ <DateWidget/> } />
+        <Route path="/notion-widgets/" element={ <Home/> } />
+        <Route path="/notion-widgets/date-widget" element={ <DateWidget/> } />
       </Routes>
     </div>
   )
