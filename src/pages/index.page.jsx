@@ -5,7 +5,7 @@ export { Page }
 function Page() {
   return (
     <>
-      <h1>Hello Index Page</h1>
+      <h1>Hello Notion Widgets</h1>
     </>
   )
 }

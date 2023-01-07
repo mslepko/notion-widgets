@@ -1,11 +1,11 @@
 import React from 'react'
-
+import DateTime from '../components/DateTime'
 export { Page }
 
 function Page() {
   return (
     <>
-      <h1>Date Widget Page</h1>
+      <DateTime />
     </>
   )
 }
