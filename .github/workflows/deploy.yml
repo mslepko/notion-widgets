@@ -19,7 +19,7 @@ jobs:
       - name: Install
         run: yarn install
 
-      - name: Build vite-plugin-ssr
+      - name: Build Site
         run: yarn build
 
       - name: Deploy
