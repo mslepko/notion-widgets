@@ -1,15 +1,24 @@
 name: Deploy to Github Pages
+
 on:
   push:
     # We only run this GitHub action upon new commits to `main`
     branches:
       - main
+
 jobs:
-  build-and-deploy:
+  build:
+    name: Build
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: latest
 
       - name: Install yarn
         uses: borales/actions-yarn@v4
@@ -22,13 +31,27 @@ jobs:
       - name: Build Site
         run: yarn build
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.4
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v2
         with:
-          branch: gh-pages
-          folder: dist
-          # Remove previous build files
-          clean: true
-          # Do not remove the `.nojekyll` file: we have manually added an empty `.nojekyll` file at the root of the `gh-pages` branch and we don't want having to re-create it after each build.
-          clean-exclude: |
-            .nojekyll
+          name: production-files
+          path: ./dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: production-files
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
