@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: latest
+          node-version: *
 
       - name: Install yarn
         uses: borales/actions-yarn@v4
