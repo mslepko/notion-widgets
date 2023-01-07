@@ -11,7 +11,7 @@ function PageLayout({ pageContext, children }) {
       <PageContextProvider pageContext={pageContext}>
         <div className="flex w-full min-h-screen">
           <Nav />
-          <div className='flex w-full min-h-screen justify-center items-center'>{children}</div>
+          <div className='flex flex-col w-full min-h-screen justify-center items-center'>{children}</div>
         </div>
       </PageContextProvider>
     </React.StrictMode>
