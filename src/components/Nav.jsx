@@ -1,17 +1,17 @@
 import React from 'react'
-import { Link } from './Link'
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
   return (
     <nav className="flex flex-col relative h-screen min-w-[20vw] items-center justify-center shrink-0">
-      <Link href="/">
+      <Link to="/">
         Home
       </Link>
-      <Link href="/date-widget">
+      <Link to="/date-widget">
         Date Widget
       </Link>
     </nav>
   )
 }
 
-export { Nav }
+export default Nav
