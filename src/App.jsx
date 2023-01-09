@@ -7,10 +7,12 @@ function App() {
   return (
     <div className="App flex w-full min-h-screen">
       <Nav />
-      <Routes>
-        <Route path="/notion-widgets/" element={ <Home/> } />
-        <Route path="/notion-widgets/date-widget" element={ <DateWidget/> } />
-      </Routes>
+      <main className="flex w-full min-h-screen min-w-screen flex-1 items-center justify-center text-2xl">
+        <Routes>
+          <Route path="/notion-widgets/" element={ <Home/> } />
+          <Route path="/notion-widgets/date-widget" element={ <DateWidget/> } />
+        </Routes>
+      </main>
     </div>
   )
 }
