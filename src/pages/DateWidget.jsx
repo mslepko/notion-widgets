@@ -1,10 +1,10 @@
 import React from 'react'
 
+import DateTime from '../components/DateTime'
+
 function DateWidget() {
     return (
-        <div>
-            <h1>This is the DateWidget page</h1>
-        </div>
+        <DateTime />
     )
 }
 
