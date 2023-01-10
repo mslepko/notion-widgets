@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const Nav = () => {
   return (
     <nav className="flex flex-col relative h-screen min-w-[20vw] items-center justify-center shrink-0">
-      <Link to="/notion-widgets/">
+      <Link to="/">
         Home
       </Link>
-      <Link to="/notion-widgets/date-widget">
+      <Link to="/date-widget">
         Date Widget
       </Link>
     </nav>
