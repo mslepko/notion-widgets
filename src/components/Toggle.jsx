@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-export default function Toggle({id, onToggle, offToggle, desc}) {
+export default function Toggle({name, onToggle, offToggle, desc}) {
   const [enabled, setEnabled] = useState(false);
   const onValue = onToggle ? onToggle : 'Show'
   const offValue = offToggle ? offToggle : 'Hide'
-  console.log('toggle', id)
+
   return (
     <div className="grid-cols-3 gap-4 grid relative items-center w-full text-xl">
       <p className="whitespace-nowrap">{desc}</p>
