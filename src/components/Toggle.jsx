@@ -2,7 +2,9 @@ import { useState } from "react";
 
 export default function Toggle({id, onToggle, offToggle, desc}) {
   const [enabled, setEnabled] = useState(false);
-
+  const onValue = onToggle ? onToggle : 'Show'
+  const offValue = offToggle ? offToggle : 'Hide'
+  console.log('toggle', id)
   return (
     <div className="grid-cols-3 gap-4 grid relative items-center w-full text-xl">
       <p className="whitespace-nowrap">{desc}</p>
@@ -14,11 +16,10 @@ export default function Toggle({id, onToggle, offToggle, desc}) {
           className={
             "relative w-11 h-6 bg-mid rounded-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all"
             + (enabled ? 'bg-brand after:translate-x-full after:border-brand after:bg-brand' : '')}
-
         ></div>
       </div>
       <p className="ml-4 font-medium">
-        {enabled ? onToggle : offToggle}
+        {enabled ? onValue : offValue}
       </p>
     </div>
   );
