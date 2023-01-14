@@ -8,7 +8,14 @@ export const DateTime = (data) => {
   Object.keys(dateWidgetConfig).forEach((id) => {
     const data = dateWidgetConfig[id]
     console.log(id, 'data', data)
-    toggles.push(<Toggle key={id} desc={data['desc']} onToggle={data['on']} offToggle={data['off']} />)
+    toggles.push(
+      <Toggle
+        key={id}
+        name={id}
+        desc={data['desc']}
+        onToggle={data['on']}
+        offToggle={data['off']}
+      />)
   })
 
   return (

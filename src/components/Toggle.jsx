@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function Toggle({name, onToggle, offToggle, desc}) {
-  const [enabled, setEnabled] = useState(false);
+  var [enabled, setEnabled] = useState(true);
   const onValue = onToggle ? onToggle : 'Show'
   const offValue = offToggle ? offToggle : 'Hide'
 

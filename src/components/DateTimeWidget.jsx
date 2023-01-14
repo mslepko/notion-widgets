@@ -4,7 +4,7 @@ export const DateTimeWidget = (data) => {
 
   var [now, setDate] = useState(new Date());
   const config = data['dateWidgetConfig']
-
+  console.log('display config', config)
   useEffect(() => {
     var timer = setInterval(() => setDate(new Date()), 1000)
     return function cleanup() {
