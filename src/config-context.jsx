@@ -10,9 +10,7 @@ let dateWidgetConfig = {
 
 function configChange(state, name) {
   console.log(name, 'configChange', state)
-  console.log('1', state[name])
   state[name] = !state[name]
-  console.log('2', state[name])
   return state
 }
 function ConfigProvider({children}) {

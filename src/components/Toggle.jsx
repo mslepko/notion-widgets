@@ -1,12 +1,13 @@
 import React from "react";
 import useConfig from "../config-provider";
 
-function Toggle({name, onToggle, offToggle, desc}) {
-  const {dispatch, state} = useConfig()
-  console.log('state', state)
-  const enabled = state[name]
+function Toggle({name, onToggle, offToggle, desc, status}) {
+  let {dispatch, state} = useConfig()
+  console.log('Toggle', state)
   const onValue = onToggle ? onToggle : 'Show'
   const offValue = offToggle ? offToggle : 'Hide'
+  const enabled = status
+
   return (
     <div className="grid-cols-3 gap-4 grid relative items-center w-full text-xl">
       <p className="whitespace-nowrap">{desc}</p>

@@ -25,11 +25,11 @@ function DateWidgetPage() {
     <div className="flex flex-col md:flex-row w-3/4 justify-around">
       <div className='w-1/2'>
         <h3 className='mb-4 text-dark'>Date/time settings</h3>
-        <DateTimeConfig dateWidgetConfig={dateWidgetContent}/>
+        <DateTimeConfig dateWidgetContent={dateWidgetContent}/>
       </div>
       <div className="flex flex-col items-center w-3/4 justify-around">
         <h3 className='mb-4 text-dark'>Preview</h3>
-        <DateTimeWidget dateWidgetConfig={dateWidgetContent}/>
+        <DateTimeWidget />
       </div>
     </div>
   )
