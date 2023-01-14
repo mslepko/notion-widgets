@@ -1,18 +1,18 @@
-import { useState } from "react";
+import React from "react";
+import useConfig from "../config-provider";
 
-export default function Toggle({name, onToggle, offToggle, desc}) {
-  var [enabled, setEnabled] = useState(true);
+function Toggle({name, onToggle, offToggle, desc}) {
+  const {dispatch, state} = useConfig()
+  console.log('state', state)
+  const enabled = state[name]
   const onValue = onToggle ? onToggle : 'Show'
   const offValue = offToggle ? offToggle : 'Hide'
-
   return (
     <div className="grid-cols-3 gap-4 grid relative items-center w-full text-xl">
       <p className="whitespace-nowrap">{desc}</p>
       <div className="flex justify-center align-middle">
         <div
-          onClick={() => {
-            setEnabled(!enabled);
-          }}
+          onClick={() => dispatch(name)}
           className={
             "relative w-11 h-6 bg-mid rounded-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all"
             + (enabled ? 'bg-brand after:translate-x-full after:border-brand after:bg-brand' : '')}
@@ -24,3 +24,5 @@ export default function Toggle({name, onToggle, offToggle, desc}) {
     </div>
   );
 }
+
+export default Toggle
