@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import useConfig from "../config-provider"
 
-export const DateTimeWidget = (data) => {
+export const DateTimeWidget = () => {
 
   var [now, setDate] = useState(new Date());
-  const config = data['dateWidgetConfig']
+  const {dispatch, state} = useConfig()
 
   useEffect(() => {
     var timer = setInterval(() => setDate(new Date()), 1000)
@@ -18,9 +19,9 @@ export const DateTimeWidget = (data) => {
 
   return (
     <div className="text-left">
-      {config.time.status ? <p>Time: {time}</p> : null}
-      {config.date.status ? <p>Date: {date}</p> : null}
-      {config.quarter.status ? <p>Quarter: {quarter}</p> : null}
+      {state.time ? <p>Time: {time}</p> : null}
+      {state.date ? <p>Date: {date}</p> : null}
+      {state.quarter ? <p>Quarter: {quarter}</p> : null}
     </div>
   )
 }
