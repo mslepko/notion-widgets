@@ -1,10 +1,10 @@
 import React from 'react'
-import Toggle from './Toggle'
+import Toggle from '../components/Toggle'
 
-export const DateTime = (widgetContent) => {
-  let config = [];
+export const DateTime = (props) => {
+  let config = props['config'];
   let toggles = []
-  const widgetData = widgetContent['dateWidgetContent']
+  const widgetData = props['content']
 
   Object.keys(config).forEach((id) => {
     const status = config[id]

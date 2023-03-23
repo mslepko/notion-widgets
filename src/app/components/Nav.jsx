@@ -6,7 +6,7 @@ const Nav = () => {
     items-center justify-center shrink-0
     text-dark dark:text-light bg-light dark:bg-brand">
       <Link href="/">Home</Link>
-      <Link href="/datewidget">Date Widget</Link>
+      <Link href="/date-widget">Date Widget</Link>
     </nav>
   )
 }
