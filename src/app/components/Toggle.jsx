@@ -14,7 +14,6 @@ function Toggle({name, onToggle, offToggle, desc, status, setConfig}) {
     (name, value) => {
       const params = new URLSearchParams(searchParams);
       params.set(name, Number(value));
-      console.log('Toggle value', value ? onValue : offValue)
       setEnabled(value)
       router.push(pathname + '?' + params.toString());
 
