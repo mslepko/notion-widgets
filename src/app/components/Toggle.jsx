@@ -2,20 +2,20 @@ import React from "react";
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { useCallback, useState } from "react"
 
-function Toggle({name, onToggle, offToggle, desc, status}) {
+function Toggle({name, onToggle, offToggle, desc, status, setConfig}) {
   const onValue = onToggle ? onToggle : 'Show'
   const offValue = offToggle ? offToggle : 'Hide'
-  const [enabled, setEnabled] = useState(status)
-  console.log('status', name, status, enabled)
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const [enabled, setEnabled] = useState(Number(status))
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
   const router = useRouter();
   
   const createQueryString = useCallback(
     (name, value) => {
       const params = new URLSearchParams(searchParams);
-      params.set(name, !value);
-      setEnabled(!value)
+      params.set(name, Number(value));
+      console.log('Toggle value', value ? onValue : offValue)
+      setEnabled(value)
       router.push(pathname + '?' + params.toString());
 
     },
@@ -27,7 +27,7 @@ function Toggle({name, onToggle, offToggle, desc, status}) {
       <p className="whitespace-nowrap">{desc}</p>
       <div className="flex justify-center align-middle">
         <div
-          onClick={() => createQueryString(name, enabled)}
+          onClick={() => createQueryString(name, !enabled)}
           className={
             "relative w-11 h-6 bg-mid rounded-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all"
             + (enabled ? 'bg-brand after:translate-x-full after:border-brand after:bg-brand' : '')}

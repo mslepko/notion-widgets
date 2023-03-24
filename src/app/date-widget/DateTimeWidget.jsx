@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react'
 export const DateTimeWidget = (props) => {
   const [now, setDate] = useState(null);
   const config = props['config']
-  
   useEffect(() => {
     var timer = setInterval(() => setDate(new Date()), 1000)
     
@@ -18,10 +17,10 @@ export const DateTimeWidget = (props) => {
   let quarter = now ? Math.ceil((now.getMonth() + 1) / 3) : ''
 
   return (
-    <div className="text-left">
-      {config.time ? <p>Time: {time}</p> : null}
-      {config.date ? <p>Date: {date}</p> : null}
-      {config.quarter ? <p>Quarter: {quarter}</p> : null}
+    <div className="text-left whitespace-nowrap">
+      {(config.time !== '0') && <p>Time: {time}</p>}
+      {(config.date !== '0') && <p>Date: {date}</p>}
+      {(config.quarter !== '0') && <p>Quarter: {quarter}</p>}
     </div>
   )
 }
