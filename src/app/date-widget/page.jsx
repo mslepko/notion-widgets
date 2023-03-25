@@ -24,7 +24,7 @@ function DateWidgetPage() {
             config={dateWidgetConfig}
             />
         </div>}
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-start min-w-fit">
         {!hideNav && <h3 className='mb-4 text-dark'>Preview</h3>}
           <DateTimeWidget config={dateWidgetConfig}/>
         </div>

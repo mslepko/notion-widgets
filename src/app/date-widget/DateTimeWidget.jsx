@@ -17,7 +17,7 @@ export const DateTimeWidget = (props) => {
   let quarter = now ? Math.ceil((now.getMonth() + 1) / 3) : ''
 
   return (
-    <div className="text-left whitespace-nowrap">
+    <div className="text-left whitespace-nowrap min-w-fit">
       {(config.time !== '0') && <p>Time: {time}</p>}
       {(config.date !== '0') && <p>Date: {date}</p>}
       {(config.quarter !== '0') && <p>Quarter: {quarter}</p>}
