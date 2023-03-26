@@ -1,7 +1,7 @@
 import { useSearchParams } from 'next/navigation';
 
 const DateWidgetConfig = () => {
-  const allowedConfigs = ['time', 'date', 'quarter', 'seconds', 'minutes']
+  const allowedConfigs = ['time', 'date', 'quarter', 'seconds', 'minutes', 'tz', 'locale']
   const searchParams = useSearchParams()
   const dateWidgetConfig = {}
   
