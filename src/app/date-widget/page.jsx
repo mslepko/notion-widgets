@@ -4,16 +4,29 @@ import DateTimeWidget from './DateTimeWidget'
 import DateTimeConfig from './DateTimeConfig'
 import DateWidgetConfig from './DateWidgetContext'
 import { useSearchParams, usePathname } from 'next/navigation'
+import { DateTime } from "luxon";
 
 function DateWidgetPage() {
   const dateWidgetConfig = DateWidgetConfig()
   const searchParams = useSearchParams()
   const pathname = usePathname();
+  
   const hideNav = searchParams.has('hidenav') && searchParams.get('hidenav')  == 1
-  let copyUrl = window.location.origin + pathname + '?hidenav=1'
+  const localTime = DateTime.local()
+  const timeZone = searchParams.has('tz') ? searchParams.get('tz') : localTime.zoneName;
+  const locale = searchParams.has('locale') ? searchParams.get('locale') : localTime.locale;
+  
+  let copyUrl = (typeof window !== 'undefined' ? window.location.origin : '' );
+  copyUrl += pathname + '?hidenav=1'
+  copyUrl += '&tz=' + timeZone;
+  copyUrl += '&locale=' + locale;
+  
   if (searchParams.toString().length > 0) {
     copyUrl += '&' + searchParams.toString()
   }
+  
+  dateWidgetConfig.tz = timeZone;
+  dateWidgetConfig.locale = locale;
     
   return (
     <div className="flex flex-col gap-10 w-3/4">
