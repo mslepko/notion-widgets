@@ -12,7 +12,7 @@ jobs:
       issues: write
       pull-requests: write
     steps:
-    - name: 'Auto-assign issue'
+    - name: 'Auto-assign issue or pull request'
       uses: pozil/auto-assign-issue@v1
       with:
           repo-token: ${{ secrets.MY_PERSONAL_ACCESS_TOKEN }}
