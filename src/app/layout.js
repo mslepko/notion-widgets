@@ -10,6 +10,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+    <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+      </head>
       <body className='flex w-full min-h-screen'>
         <Nav />
         <main className="flex w-full min-h-screen min-w-screen flex-1 items-center justify-center text-2xl text-dark">
