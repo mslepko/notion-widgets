@@ -22,9 +22,9 @@ function Toggle({name, onToggle, offToggle, desc, status, setConfig}) {
   );
 
   return (
-    <div className="grid-cols-3 gap-4 grid relative items-center w-full text-xl">
-      <p className="whitespace-nowrap">{desc}</p>
-      <div className="flex justify-center align-middle">
+    <div className="flex gap-5 items-center w-full text-[16px] sm:text-xl p-1">
+      <p className=" whitespace-nowrap min-w-[15vw]">{desc}</p>
+      <div className="flex justify-center align-middle ">
         <div
           onClick={() => createQueryString(name, !enabled)}
           className={

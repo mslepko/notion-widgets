@@ -7,8 +7,8 @@ const Nav = () => {
   const hideNav = searchParams.has('hidenav') && searchParams.get('hidenav')  == 1
   return (
     <>
-      {!hideNav && <nav className="flex flex-col relative min-h-screen min-w-[20vw]
-      items-center justify-center shrink-0
+      {!hideNav && <nav className="flex justify-around sm:flex-col relative p-2 w-full sm:min-h-screen sm:w-48
+      items-center sm:justify-center shrink-0
       text-dark dark:text-light bg-light dark:bg-brand">
         <Link href="/">Home</Link>
         <Link href="/date-widget">Date Widget</Link>

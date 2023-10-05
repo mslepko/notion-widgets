@@ -32,7 +32,7 @@ export const DateTime = (props) => {
     const status = config[id]
     const values = dateWidgetContent[id]
     toggles.push(
-      <Toggle
+      <Toggle className=' h-5'
         key={id}
         name={id}
         desc={values['desc']}
