@@ -29,7 +29,7 @@ function DateWidgetPage() {
   dateWidgetConfig.locale = locale;
     
   return (
-    <div className="flex flex-col gap-10 w-3/4">
+    <div className="flex flex-col gap-10 w-3/4 mx-auto">
       <div className="flex flex-col md:flex-row w-full justify-around">
         {!hideNav && <div className='w-1/2'>
           <h3 className='mb-4 text-dark'>Date/time settings</h3>
@@ -44,7 +44,7 @@ function DateWidgetPage() {
       </div>
       {!hideNav && <div>
         <p>URL to copy</p>
-        <p>{copyUrl}</p>
+        <p className=' sm:text-xl text-sm'>{copyUrl}</p>
       </div>}
     </div>
   )
