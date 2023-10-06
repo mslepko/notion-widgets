@@ -15,16 +15,19 @@ export const DateTimeWidget = (props) => {
     return function cleanup() {
       clearInterval(timer)
     }
-  });
-  
+  })
+  let daynow=new Date(Date.now())
+  let dayArr=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
   let time = now?.toLocaleString(DateTime.TIME_WITH_SECONDS)
   let date = now?.toLocaleString(DateTime.DATE_SHORT)
   let quarter = now?.toFormat('q')
+  let day=dayArr[daynow.getDay()]
 
   return (
     <div className="text-left whitespace-nowrap min-w-fit">
       {(config.time !== '0') && <p>Time: {time}</p>}
       {(config.date !== '0') && <p>Date: {date}</p>}
+      {(config.day !== '0') && <p>Day: {day}</p>}
       {(config.quarter !== '0') && <p>Quarter: {quarter}</p>}
     </div>
   )
