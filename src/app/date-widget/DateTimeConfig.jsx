@@ -12,6 +12,8 @@ const dateWidgetContent = {
   },
   'date': {
     desc: 'Date',
+  },'day':{
+    desc: 'Day',
   },
   'quarter': {
     desc: 'Quarter',
@@ -32,7 +34,7 @@ export const DateTime = (props) => {
     const status = config[id]
     const values = dateWidgetContent[id]
     toggles.push(
-      <Toggle className=' h-5'
+      <Toggle
         key={id}
         name={id}
         desc={values['desc']}
