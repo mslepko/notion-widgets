@@ -11,7 +11,7 @@
   "dependencies": {
     "@vercel/analytics": "^1.1.1",
     "eslint": "8.56.0",
-    "eslint-config-next": "14.0.3",
+    "eslint-config-next": "14.0.4",
     "luxon": "^3.4.4",
     "next": "14.0.3",
     "react": "18.2.0",
