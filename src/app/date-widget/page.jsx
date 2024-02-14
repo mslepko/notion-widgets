@@ -5,6 +5,7 @@ import DateTimeConfig from './DateTimeConfig'
 import DateWidgetConfig from './DateWidgetContext'
 import { useSearchParams, usePathname } from 'next/navigation'
 import { DateTime } from "luxon";
+import { Suspense } from 'react'
 
 function DateWidgetPage() {
   const dateWidgetConfig = DateWidgetConfig()
@@ -44,7 +45,9 @@ function DateWidgetPage() {
       </div>
       {!hideNav && <div>
         <p>URL to copy</p>
+        <Suspense>
         <p className=' sm:text-xl text-sm'>{copyUrl}</p>
+        </Suspense>
       </div>}
     </div>
   )
