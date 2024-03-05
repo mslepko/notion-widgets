@@ -12,6 +12,7 @@ const Nav = () => {
       text-dark dark:text-light bg-light dark:bg-brand">
         <Link href="/">Home</Link>
         <Link href="/date-widget">Date Widget</Link>
+        <Link href="/pomodoro">Pomodoro Timer</Link>
         <div className="mt-auto"> {/* This makes the content below it go to the bottom */}
             <a href="https://www.buymeacoffee.com/michal.codes" target="_blank" rel="noopener noreferrer">
               <i className="fa fa-coffee" style={{ fontSize: '24px' }}></i> Buy me a Coffee?
