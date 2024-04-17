@@ -7,7 +7,7 @@ const PomodoroTimer = () => {
   useEffect(() => {
     let interval = null;
 
-    if (isActive) {
+    if (isActive && timeLeft !== 0) {
       interval = setInterval(() => {
         setTimeLeft((timeLeft) => timeLeft - 1);
       }, 1000);
@@ -19,8 +19,8 @@ const PomodoroTimer = () => {
   }, [isActive, timeLeft]);
 
   const toggle = () => {
-    setIsActive(!isActive);
-  };
+    setIsActive(!isActive)
+  }
 
   const reset = () => {
     setTimeLeft(25 * 60);
