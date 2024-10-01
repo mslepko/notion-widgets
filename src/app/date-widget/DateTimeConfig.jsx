@@ -18,6 +18,9 @@ const dateWidgetContent = {
   'quarter': {
     desc: 'Quarter',
   },
+  'labels': {
+    desc: 'Labels',
+  },
 }
 
 const contentKeys = Object.keys(dateWidgetContent)
