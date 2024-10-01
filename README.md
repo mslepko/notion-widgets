@@ -2,6 +2,8 @@
 
 This project is built with [Next.js](https://nextjs.org/), a React framework for production. Below are the instructions to set up and run the project locally, as well as build and lint the codebase.
 
+Live URL: https://notion-with-widgets.vercel.app/
+
 ## Prerequisites
 
 Before running any of the commands, make sure you have the following installed:
