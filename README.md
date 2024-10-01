@@ -1,11 +1,49 @@
-# Various widgets to embed in Notion templates
+## Overview
 
-## Plan
-1. Date/time widget
-2. Quotes
-3. Year/mont/day progress
-4. Life progress
+This project is built with [Next.js](https://nextjs.org/), a React framework for production. Below are the instructions to set up and run the project locally, as well as build and lint the codebase.
 
-![GitHub deployments](https://img.shields.io/github/deployments/mslepko/notion-widgets/production?style=for-the-badge)
+Live URL: https://notion-with-widgets.vercel.app/
 
-https://notion-with-widgets.vercel.app/
+## Prerequisites
+
+Before running any of the commands, make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (version 12.0.0 or higher)
+- [npm](https://www.npmjs.com/) (Node package manager)
+
+## Available Scripts
+
+In the project directory, you can run the following commands:
+
+To start the development server, run:
+```bash
+npm run dev
+```
+
+Runs the app in development mode. Open http://localhost:3000 to view it in the browser. The page will reload if you make edits.
+
+##
+
+To build the app for production, run:
+```bash
+npm run build
+```
+Builds the app for production to the .next folder. The build is optimized and ready to be deployed.
+
+##
+
+To start the production build, run:
+```bash
+npm run start
+```
+
+Runs the production build. You must run npm run build before using this command.
+
+##
+
+To run the linter, run:
+```bash
+npm run lint
+```
+Runs the linter to identify and fix code formatting issues.
+

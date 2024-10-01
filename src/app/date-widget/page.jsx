@@ -51,7 +51,7 @@ function DateWidgetPage() {
           <DateTimeWidget config={dateWidgetConfig}/>
         </div>
       </div>
-      {!hideNav && <div>
+      {!hideNav && <div className="h-24 w-full">
         <p>URL to copy</p>
         <Suspense>
           <div className='w-full flex flex-row'>
