@@ -1,5 +1,5 @@
 "use client";
-import React from 'react'
+import React, { useState } from 'react'
 import DateTimeWidget from './DateTimeWidget'
 import DateTimeConfig from './DateTimeConfig'
 import DateWidgetConfig from './DateWidgetContext'
@@ -11,7 +11,7 @@ function DateWidgetPage() {
   const dateWidgetConfig = DateWidgetConfig()
   const searchParams = useSearchParams()
   const pathname = usePathname();
-  
+  const [copied, setCopied] = useState(false)
   const hideNav = searchParams.has('hidenav') && searchParams.get('hidenav')  == 1
   const localTime = DateTime.local()
   const timeZone = searchParams.has('tz') ? searchParams.get('tz') : localTime.zoneName;
@@ -25,6 +25,14 @@ function DateWidgetPage() {
   if (searchParams.toString().length > 0) {
     copyUrl += '&' + searchParams.toString()
   }
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(copyUrl);
+    setCopied(true)
+    setTimeout(() => {
+      setCopied(false)
+    }, 2000)
+  } 
   
   dateWidgetConfig.tz = timeZone;
   dateWidgetConfig.locale = locale;
@@ -46,7 +54,12 @@ function DateWidgetPage() {
       {!hideNav && <div className="h-24 w-full">
         <p>URL to copy</p>
         <Suspense>
-        <p className='sm:text-xl text-sm h-full'>{copyUrl}</p>
+          <div className='w-full flex flex-row'>
+            <input type="text" className='w-full mr-2 border-2 border-gray-300 rounded-md p-1 text-lg' value={copyUrl} />
+            <button onClick={() =>  copyToClipboard()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded text-lg">
+              {copied ? <i className="fa fa-check"></i> : <i className="fa fa-copy"></i>}
+            </button>
+          </div>
         </Suspense>
       </div>}
     </div>
