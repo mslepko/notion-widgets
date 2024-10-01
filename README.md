@@ -44,6 +44,6 @@ Runs the production build. You must run npm run build before using this command.
 To run the linter, run:
 ```bash
 npm run lint
-````
+```
 Runs the linter to identify and fix code formatting issues.
 
