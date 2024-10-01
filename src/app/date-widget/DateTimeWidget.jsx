@@ -8,6 +8,7 @@ export const DateTimeWidget = (props) => {
   const config = props['config']
   const tz = config['tz'];
   const locale = config['locale'];
+  const labels = config['labels'];
 
   useEffect(() => {
     var timer = setInterval(() => setDate(DateTime.now(tz).setLocale(locale)), 1000)
@@ -25,10 +26,22 @@ export const DateTimeWidget = (props) => {
 
   return (
     <div className="text-left whitespace-nowrap min-w-fit">
-      {(config.time !== '0') && <p>Time: {time}</p>}
-      {(config.date !== '0') && <p>Date: {date}</p>}
-      {(config.day !== '0') && <p>Day: {day}</p>}
-      {(config.quarter !== '0') && <p>Quarter: {quarter}</p>}
+      {config.time !== '0' && <div className='flex flex-row'>
+        {config.labels !== '0' && <p className='mr-2'>Time:</p>}
+        <p>{time}</p>
+      </div>}
+      {config.date !== '0' && <div className='flex flex-row'>
+        {config.labels !== '0' && <p className='mr-2'>Date:</p>}
+        <p>{date}</p>
+      </div>}
+      {config.day !== '0' && <div className='flex flex-row'>
+        {config.labels !== '0' && <p className='mr-2'>Day:</p>}
+        <p>{day}</p>
+      </div>}
+      {config.quarter !== '0' && <div className='flex flex-row'>
+        {config.labels !== '0' && <p className='mr-2'>Quarter:</p>}
+        <p>{quarter}</p>
+      </div>}
     </div>
   )
 }
