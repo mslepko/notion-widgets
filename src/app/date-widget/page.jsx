@@ -43,10 +43,10 @@ function DateWidgetPage() {
           <DateTimeWidget config={dateWidgetConfig}/>
         </div>
       </div>
-      {!hideNav && <div>
+      {!hideNav && <div className="h-24 w-full">
         <p>URL to copy</p>
         <Suspense>
-        <p className=' sm:text-xl text-sm'>{copyUrl}</p>
+        <p className='sm:text-xl text-sm h-full'>{copyUrl}</p>
         </Suspense>
       </div>}
     </div>
